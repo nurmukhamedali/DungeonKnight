@@ -58,7 +58,7 @@ if __name__ == "__main__":
     size = 60
     create_game(size, True)
 
-    ## FIXME I'm Here
+
 
 
     while engine.working:
