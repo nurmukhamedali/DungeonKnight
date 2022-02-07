@@ -1,4 +1,4 @@
-from service import Service
+import service as Service
 
 
 class GameEngine:
@@ -36,6 +36,7 @@ class GameEngine:
     # MOVEMENT
     def move_up(self):
         self.score -= 0.02
+
         if self.map[self.hero.position[1] - 1][self.hero.position[0]] == Service.wall:
             return
         self.hero.position[1] -= 1
@@ -71,7 +72,8 @@ class GameEngine:
         self.objects.append(obj)
 
     def add_objects(self, objects):
-        self.objects.extend(objects)
+        if objects is not None:
+            self.objects.extend(objects)
 
     def delete_object(self, obj):
         self.objects.remove(obj)
